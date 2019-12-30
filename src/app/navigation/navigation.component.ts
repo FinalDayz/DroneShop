@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  public page: string = 'home';
+  @Output() pageChanged = new EventEmitter();
+
   constructor() { }
+
+  clickNavigation(page: string) {
+    this.page = page;
+    this.pageChanged.emit(page);
+  }
 
   ngOnInit() {
   }

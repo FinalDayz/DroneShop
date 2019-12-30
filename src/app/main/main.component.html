@@ -1,0 +1,5 @@
+<app-navigation (pageChanged)="curLocation = $event"></app-navigation>
+<app-home *ngIf="navigator('home')"></app-home>
+<app-products *ngIf="navigator('products')"></app-products>
+<app-shopping-card *ngIf="navigator('shopping-card')"></app-shopping-card>
+<app-login *ngIf="navigator('login')"></app-login>
