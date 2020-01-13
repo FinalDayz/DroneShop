@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  public page: string = 'home';
+  public page: string = 'login';
   @Output() pageChanged = new EventEmitter();
 
   constructor() { }

@@ -4,7 +4,7 @@
     rgba(0, 0, 0, 0.0)
   ),
     url("../../assets/img/main-shot.jpg");
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   width: 100vw;
   height: 70vh;
