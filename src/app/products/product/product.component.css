@@ -1,0 +1,55 @@
+.product {
+  width: 500px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.more-info {
+  float: left;
+  margin-top: 5px;
+  text-decoration: underline;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.productText {
+  margin-left: 50px;
+  float: left;
+  width: 600px;
+  height: 200px;
+}
+
+.product-title {
+  margin-top: 0;
+}
+
+.product-price {
+  padding-top: 20px;
+  font-size: 2em;
+  color: #e45353;
+  display: inline;
+  float: left;
+}
+
+.productImage {
+  width: 400px;
+  float: left;
+}
+
+.product-description {
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 1.2em;
+}
+
+.break {
+  display: block;
+  width: 100%;
+  float: left
+}
