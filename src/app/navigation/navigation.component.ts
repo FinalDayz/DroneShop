@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ShoppingCardService} from "../app/shared/shopping-card.service";
 
 @Component({
   selector: 'app-navigation',
@@ -10,7 +11,7 @@ export class NavigationComponent implements OnInit {
   public page: string = 'login';
   @Output() pageChanged = new EventEmitter();
 
-  constructor() { }
+  constructor(public shoppingCardService: ShoppingCardService) { }
 
   clickNavigation(page: string) {
     this.page = page;

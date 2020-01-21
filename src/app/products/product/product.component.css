@@ -25,6 +25,12 @@
   margin-top: 0;
 }
 
+.product-add {
+  width: 50px;
+  float: right;
+  cursor: pointer;
+}
+
 .product-price {
   padding-top: 20px;
   font-size: 2em;

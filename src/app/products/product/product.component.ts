@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "./Product";
+import {ShoppingCardService} from "../../app/shared/shopping-card.service";
 
 @Component({
   selector: 'app-product',
@@ -9,9 +10,12 @@ import {Product} from "./Product";
 export class ProductComponent implements OnInit {
 
   @Input() product: Product;
-  constructor() { }
+  constructor(private shoppingCardService: ShoppingCardService) { }
 
   ngOnInit() {
   }
 
+  addProduct() {
+    this.shoppingCardService.addItem(this.product);
+  }
 }

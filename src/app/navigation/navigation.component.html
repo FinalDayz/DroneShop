@@ -9,7 +9,8 @@
       <div class="nav-item" (click)="clickNavigation('products')">Products</div>
     </div>
     <div class="col-md-2 text-center">
-      <div class="nav-item" (click)="clickNavigation('shopping-card')">Shopping card</div>
+      <div class="nav-item" (click)="clickNavigation('shopping-card')">Shopping card
+        <div [hidden]="!shoppingCardService.hasItems()" class="card-items">{{ shoppingCardService.itemCount() }}</div></div>
     </div>
     <div class="col-md-2 text-center">
       <div class="nav-item" (click)="clickNavigation('login')">Login/register</div>

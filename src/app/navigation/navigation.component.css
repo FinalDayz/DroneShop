@@ -1,5 +1,5 @@
 nav {
-  width: 100vw;
+  width: 100%;
   background-color: whitesmoke;
 }
 
@@ -11,6 +11,21 @@ nav {
   border-bottom: 2px solid darkcyan;
   cursor: pointer;
   color: darkcyan;
-  font-family: Arial;
+  font-family: Arial, serif;
   font-size: 1.5em;
+}
+
+
+.card-items {
+  position: relative;
+  float: right;
+  top: -30px;
+  right: -20px;
+  background-color: deepskyblue;
+  border-radius: 10px;
+  width: 22px;
+  height: 22px;
+  font-size: 0.8em;
+  color: black;
+  font-weight: bold;
 }

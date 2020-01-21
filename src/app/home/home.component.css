@@ -3,7 +3,7 @@
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.0)
   ),
-    url("../../assets/img/main-shot.jpg");
+    url("/assets/img/main-shot.jpg");
   background-position: center;
   background-size: cover;
   width: 100vw;
@@ -45,7 +45,7 @@
 }
 
 .midroll1 {
-  background-image: url("../../assets/img/midroll-1.jpeg");
+  background-image: url("/assets/img/midroll-1.jpeg");
 }
 
 .shot h1 {
@@ -83,19 +83,19 @@
 }
 
 .shot1 .image {
-  background-image: url("../../assets/img/shot-1.jpeg");
+  background-image: url("/assets/img/shot-1.jpeg");
 }
 
 .shot2 .image {
-  background-image: url("../../assets/img/shot-2.jpeg");
+  background-image: url("/assets/img/shot-2.jpeg");
 }
 
 .shot3 .image {
-  background-image: url("../../assets/img/shot-3.jpeg");
+  background-image: url("/assets/img/shot-3.jpeg");
 }
 
 .shot4 .image {
-  background-image: url("../../assets/img/shot-4.jpeg");
+  background-image: url("/assets/img/shot-4.jpeg");
 }
 
 
