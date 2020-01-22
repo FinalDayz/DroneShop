@@ -13,6 +13,7 @@ import { MainComponent } from './main/main.component';
 import {LoginService} from "./shared/login.service";
 import {ApiService} from "./shared/api.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { ShoppingProductComponent } from './shopping-card/shopping-product/shopping-product.component';
 
 
 
@@ -26,6 +27,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     ShoppingCardComponent,
     LoginComponent,
     MainComponent,
+    ShoppingProductComponent,
   ],
     imports: [
         BrowserModule,
