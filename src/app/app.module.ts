@@ -15,6 +15,7 @@ import {ApiService} from "./shared/api.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ShoppingProductComponent } from './shopping-card/shopping-product/shopping-product.component';
 
 
 
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ShoppingCardComponent,
     LoginComponent,
     MainComponent,
+    ShoppingProductComponent,
   ],
     imports: [
         BrowserModule,

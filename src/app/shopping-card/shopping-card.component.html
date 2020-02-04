@@ -4,7 +4,7 @@
     <h2 class="title">U heeft {{ products.length }} item<span *ngIf="products.length != 1">s</span> in uw winkelwagen</h2>
     <hr class="break">
     <div class="product-item" *ngFor="let product of products">
-      <app-product [product]="product"></app-product>
+      <app-shopping-product [product]="product" [ammount]="productAmmounts[product.productId]"></app-shopping-product>
     </div>
   </div>
   <div class="empty products" *ngIf="products.length < 1">
