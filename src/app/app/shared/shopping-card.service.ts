@@ -36,4 +36,17 @@ export class ShoppingCardService {
   hasItems() {
     return this.products.length >= 1;
   }
+
+  removeOneItem(id: number) {
+    let index = 0;
+    for(const product of this.products) {
+      if(product.productId === id) {
+        this.products.splice(index, 1);
+        break;
+      }
+      index++;
+    }
+
+    this.localStorageService.setItem("products", this.products);
+  }
 }

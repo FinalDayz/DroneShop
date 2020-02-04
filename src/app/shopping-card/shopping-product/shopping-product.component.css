@@ -10,7 +10,7 @@
   font-size: 1.4em;
 }
 
-. product-title {
+.product-title {
   font-size: 1.8em;
   margin-top: 0;
 }
@@ -37,7 +37,19 @@
 }
 
 .totalPrice {
-  float: right;
   font-size: 1.8em;
-  margin-top: 100px;
+  margin-top: 90px;
+}
+
+.right {
+  float: right;
+}
+
+.delete {
+  font-size: 1.4em;
+  display: block;
+}
+
+.delete-img {
+  width: 20px;
 }

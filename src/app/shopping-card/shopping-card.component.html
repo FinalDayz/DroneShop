@@ -4,7 +4,7 @@
     <h2 class="title">U heeft {{ products.length }} item<span *ngIf="products.length != 1">s</span> in uw winkelwagen</h2>
     <hr class="break">
     <div class="product-item" *ngFor="let product of products">
-      <app-shopping-product [product]="product" [ammount]="productAmmounts[product.productId]"></app-shopping-product>
+      <app-shopping-product [products]="products" [product]="product" [ammount]="productAmmounts[product.productId]"></app-shopping-product>
     </div>
     <div class="total-cost">Totaal af te rekenen: €{{ totalPrice }}</div>
   </div>

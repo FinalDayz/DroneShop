@@ -5,6 +5,9 @@
     <div class="product-price">Product prijs: <span class="price">€ {{ product.productPrice }}</span></div>
     <div class="amount">Aantal: {{ ammount }}</div>
   </div>
-  <div class="totalPrice">Totale prijs:  <span class="price">€ {{ product.productPrice * ammount }}</span></div>
+  <div class="right">
+    <div class="delete btn btn-danger" (click)="deleteItem()"><img src="assets/delete.png" class="delete-img">&nbsp;Verwijder</div>
+    <div class="totalPrice">Totale prijs:  <span class="price">€ {{ product.productPrice * ammount }}</span></div>
+  </div>
 </div>
 <hr class="break">
