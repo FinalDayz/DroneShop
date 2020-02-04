@@ -6,6 +6,7 @@
     <div class="product-item" *ngFor="let product of products">
       <app-shopping-product [product]="product" [ammount]="productAmmounts[product.productId]"></app-shopping-product>
     </div>
+    <div class="total-cost">Totaal af te rekenen: €{{ totalPrice }}</div>
   </div>
   <div class="empty products" *ngIf="products.length < 1">
     <h2 class="title">Uw winkelwagen is leeg!</h2>

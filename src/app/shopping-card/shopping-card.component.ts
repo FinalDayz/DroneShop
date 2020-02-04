@@ -12,6 +12,7 @@ export class ShoppingCardComponent implements OnInit {
 
   // products: Array<{number: {product: Product, amount: Number}}>;
   products: Array<Product> = [];
+  totalPrice: number = 0;
 
   constructor(private shoppingCardService: ShoppingCardService) { }
 
@@ -21,6 +22,9 @@ export class ShoppingCardComponent implements OnInit {
     let newProducts = [];
     console.log("prod: ", this.products);
     for(let product of this.products) {
+      console.log(this.totalPrice);
+      this.totalPrice += product.productPrice as number;
+      console.log(product.productPrice);
       if(this.productAmmounts[product.productId] == undefined) {
         this.productAmmounts[product.productId] = 1;
         newProducts.push(product);
