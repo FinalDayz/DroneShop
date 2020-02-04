@@ -1,33 +1,43 @@
 .product {
-  width: 500px;
+  /*width: 1200px;*/
+  height: 150px;
 }
 
 .productText {
   margin-left: 50px;
   float: left;
-  width: 600px;
-  height: 200px;
+  height: 100px;
+  font-size: 1.4em;
 }
 
-.product-title {
+. product-title {
+  font-size: 1.8em;
   margin-top: 0;
 }
-
 .product-price {
   padding-top: 20px;
-  font-size: 2em;
-  color: #e45353;
   display: inline;
-  float: left;
+}
+
+.price {
+  color: #e45353;
 }
 
 .productImage {
-  width: 400px;
+  width: 300px;
   float: left;
+  max-height: 150px;
 }
 
 .break {
   display: block;
-  width: 100%;
-  float: left
+}
+
+.amount {
+}
+
+.totalPrice {
+  float: right;
+  font-size: 1.8em;
+  margin-top: 100px;
 }

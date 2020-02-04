@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  curLocation = 'products';
+  curLocation = 'shopping-card';
 
   constructor() { }
 

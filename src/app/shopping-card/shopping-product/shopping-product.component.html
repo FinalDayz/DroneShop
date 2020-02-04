@@ -1,10 +1,10 @@
-<div clas="product">
+<div class="product">
   <img class="productImage" src="assets/img/products/{{ product.productImagePath }}">
   <div class="productText">
-    <h3 class="product-title">{{ product.productName }}</h3>
-    <div class="product-price">€{{ product.productPrice * ammount }}</div>
-    <div class="ammount">{{ ammount }}</div>
-    <br>
+    <h3 class="product-title">Product naam: {{ product.productName }}</h3>
+    <div class="product-price">Product prijs: <span class="price">€ {{ product.productPrice }}</span></div>
+    <div class="amount">Aantal: {{ ammount }}</div>
   </div>
-  <hr class="break">
+  <div class="totalPrice">Totale prijs:  <span class="price">€ {{ product.productPrice * ammount }}</span></div>
 </div>
+<hr class="break">
