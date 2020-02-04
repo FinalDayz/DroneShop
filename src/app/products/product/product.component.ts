@@ -10,12 +10,17 @@ import {ShoppingCardService} from "../../app/shared/shopping-card.service";
 export class ProductComponent implements OnInit {
 
   @Input() product: Product;
+  addGray: boolean;
   constructor(private shoppingCardService: ShoppingCardService) { }
 
   ngOnInit() {
   }
 
-  addProduct() {
+  addProduct(event: MouseEvent) {
+    this.addGray = true;
+    setTimeout(() => {
+      this.addGray = false;
+    }, 500);
     this.shoppingCardService.addItem(this.product);
   }
 }

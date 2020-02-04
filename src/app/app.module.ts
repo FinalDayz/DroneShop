@@ -13,6 +13,8 @@ import { MainComponent } from './main/main.component';
 import {LoginService} from "./shared/login.service";
 import {ApiService} from "./shared/api.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -31,7 +33,9 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        MatProgressSpinnerModule,
+        BrowserAnimationsModule
     ],
   providers: [HttpClient, ApiService, LoginService],
   bootstrap: [AppComponent]

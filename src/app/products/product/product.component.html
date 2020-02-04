@@ -5,7 +5,7 @@
     <div class="product-description">{{ product.productDesc }}</div>
     <div class="more-info clickable">Meer informatie</div>
     <div class="product-price">€{{ product.productPrice }}</div>
-    <img class="product-add" src="assets/img/shopping-card-add.png" (click)="addProduct()">
+    <img class="product-add" src="assets/img/shopping-card-add.png" (click)="addProduct($event)" [class.gray]="addGray" >
     <br>
   </div>
   <hr class="break">
