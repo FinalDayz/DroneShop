@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "./Product";
-import {ShoppingCardService} from "../../app/shared/shopping-card.service";
+import {ShoppingcartService} from "../../app/shared/shopping-cart.service";
 
 @Component({
   selector: 'app-product',
@@ -11,7 +11,7 @@ export class ProductComponent implements OnInit {
 
   @Input() product: Product;
   addGray: boolean;
-  constructor(private shoppingCardService: ShoppingCardService) { }
+  constructor(private shoppingcartService: ShoppingcartService) { }
 
   ngOnInit() {
   }
@@ -21,6 +21,6 @@ export class ProductComponent implements OnInit {
     setTimeout(() => {
       this.addGray = false;
     }, 500);
-    this.shoppingCardService.addItem(this.product);
+    this.shoppingcartService.addItem(this.product);
   }
 }

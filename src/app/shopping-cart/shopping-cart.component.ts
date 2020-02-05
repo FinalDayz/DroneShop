@@ -1,30 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../products/product/Product";
-import {ShoppingCardService} from "../app/shared/shopping-card.service";
+import {ShoppingcartService} from "../app/shared/shopping-cart.service";
 
 @Component({
-  selector: 'app-shopping-card',
-  templateUrl: './shopping-card.component.html',
-  styleUrls: ['./shopping-card.component.css']
+  selector: 'app-shopping-cart',
+  templateUrl: './shopping-cart.component.html',
+  styleUrls: ['./shopping-cart.component.css']
 })
-export class ShoppingCardComponent implements OnInit {
+export class ShoppingcartComponent implements OnInit {
   productAmmounts = {};
 
   // products: Array<{number: {product: Product, amount: Number}}>;
   products: Array<Product> = [];
   totalPrice: number = 0;
 
-  constructor(private shoppingCardService: ShoppingCardService) { }
+  constructor(private shoppingcartService: ShoppingcartService) { }
 
   ngOnInit() {
 
-    this.products = this.shoppingCardService.getItems();
+    this.products = this.shoppingcartService.getItems();
     let newProducts = [];
-    console.log("prod: ", this.products);
     for(let product of this.products) {
-      console.log(this.totalPrice);
       this.totalPrice += product.productPrice as number;
-      console.log(product.productPrice);
       if(this.productAmmounts[product.productId] == undefined) {
         this.productAmmounts[product.productId] = 1;
         newProducts.push(product);

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../products/product/Product";
-import {ShoppingCardService} from "../../app/shared/shopping-card.service";
+import {ShoppingcartService} from "../../app/shared/shopping-cart.service";
 
 @Component({
   selector: 'app-shopping-product',
@@ -12,13 +12,13 @@ export class ShoppingProductComponent implements OnInit {
   @Input() ammount: number = 1;
   @Input() products: Array<Product> = [];
 
-  constructor(private shoppingCardService: ShoppingCardService) { }
+  constructor(private shoppingcartService: ShoppingcartService) { }
 
   ngOnInit() {
   }
 
   deleteItem() {
-    this.shoppingCardService.removeOneItem(this.product.productId);
+    this.shoppingcartService.removeOneItem(this.product.productId);
     this.ammount--;
     if(this.ammount !== 0) {
       return;

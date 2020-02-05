@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "./product/Product";
 import {ProductService} from "../shared/product.service";
-import {ShoppingCardService} from "../app/shared/shopping-card.service";
+import {ShoppingcartService} from "../app/shared/shopping-cart.service";
 
 @Component({
   selector: 'app-products',
@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   products: Array<Product>;
 
   constructor(private productService: ProductService,
-              private shoppingCardService: ShoppingCardService) { }
+              private shoppingcartService: ShoppingcartService) { }
 
   ngOnInit() {
     this.productService.getAll().subscribe(response => {

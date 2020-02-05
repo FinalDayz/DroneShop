@@ -2,18 +2,18 @@
 <div class="container">
 
   <div class="entry">
-    <form class="login" [formGroup]="loginForm">
+    <form class="login" [formGroup]="loginForm" (ngSubmit)="submit()">
       <div class="input">
         <label>E-mail</label>
-        <input required placeholder="E-mail" class="input-lg" formControlName="email">
+        <input required placeholder="E-mail" class="input-lg" formControlName="accountEmail">
       </div>
       <div class="input">
         <label>Password</label>
-        <input required placeholder="Password" type="password" class="input-lg" formControlName="password">
+        <input required placeholder="Password" type="password" class="input-lg" formControlName="accountPassword">
       </div>
       <div class="input" id="loginInp">
         <a class="registerButton">Register</a>
-        <button type="button" class="loginButton" (click)="clickedLogin()" [disabled]="!loginForm.valid">Login</button>
+        <button type="submit" class="loginButton"  [disabled]="!loginForm.valid">Login</button>
       </div>
     </form>
   </div>
