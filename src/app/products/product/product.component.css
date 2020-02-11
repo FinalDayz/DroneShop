@@ -1,11 +1,3 @@
-.product {
-  width: 500px;
-}
-
-.clickable {
-  cursor: pointer;
-}
-
 .more-info {
   float: left;
   margin-top: 5px;
@@ -22,7 +14,8 @@
 }
 
 .product-title {
-  margin-top: 0;
+  padding-top: 10px;
+  display: inline;
 }
 
 .product-add {
@@ -52,6 +45,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   font-size: 1.2em;
+  margin-top: 10px;
 }
 
 .break {
@@ -62,4 +56,9 @@
 
 .gray {
   filter: brightness(30%);
+}
+
+.edit-button {
+  float: right;
+  font-size: 1.3em;
 }

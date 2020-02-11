@@ -17,10 +17,6 @@ export class NavigationComponent implements OnInit {
     public shoppingcartService: ShoppingcartService, public accountService: AccountService,
               private router: Router) { }
 
-  public isAdmin(): boolean {
-    return this.accountService.hasRole(Role.ADMIN);
-  }
-
   ngOnInit() {
   }
 

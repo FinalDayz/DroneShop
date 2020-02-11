@@ -1,0 +1,32 @@
+<div class="edit-product">
+  <div class="product-details">
+    <form class="login" [formGroup]="productForm" (ngSubmit)="submitChanges()">
+      <label>
+        <span class="text-left">Afbeelding</span>
+        <input required placeholder="Afbeelding URL" class="input-lg input" formControlName="productImagePath"
+        value="{{ product.productImagePath }}">
+        <img class="productImage" src="{{ product.productImagePath }}">
+      </label>
+      <label>
+        <span class="text-left">Naam</span>
+        <input required placeholder="Naam" class="input-lg input" formControlName="productName"
+               value="{{ product.productName }}">
+      </label>
+      <label>
+        <span class="text-left">Beschrijving</span>
+        <textarea required placeholder="Beschrijving" class="input-lg description"
+                  formControlName="productDesc" [value]="product.productDesc"></textarea>
+      </label>
+      <label>
+        <span class="text-left">Prijs</span>
+        <input required placeholder="€100" class="input-lg input" formControlName="productPrice"
+               value="{{ product.productPrice }}">
+      </label>
+      <br>
+    </form>
+  </div>
+  <div class="footer">
+    <button class="btn-danger">Anuleer</button>
+    <button class="btn-success">Wijzigingen opslaan</button>
+  </div>
+</div>

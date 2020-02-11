@@ -21,6 +21,8 @@ import {AccountService} from "./shared/account.service";
 import {LocalStorageService} from "./app/shared/local-storage.service";
 import {RouterModule, Routes} from "@angular/router";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { EditProductComponent } from './products/edit-product/edit-product.component';
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 
 export function init_app(accountService: AccountService) {
   return () => accountService.init();
@@ -53,9 +55,11 @@ const appRoutes: Routes = [
     LoginComponent,
     MainComponent,
     ShoppingProductComponent,
+    EditProductComponent,
   ],
   imports: [
     MatSnackBarModule,
+    MatDialogModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -73,6 +77,9 @@ const appRoutes: Routes = [
       deps: [AccountService]
     },
     {provide: APP_INITIALIZER, useFactory: init_app, deps: [AccountService], multi: true},
+  ],
+  entryComponents: [
+    EditProductComponent
   ],
   bootstrap: [AppComponent]
 })

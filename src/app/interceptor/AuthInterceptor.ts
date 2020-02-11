@@ -27,7 +27,6 @@ export class AuthInterceptor implements HttpInterceptor {
 
     return next.handle(tokenizedReq).pipe(
       catchError(err => {
-
         return throwError(err);
       }));
 

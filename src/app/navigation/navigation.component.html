@@ -11,10 +11,9 @@
       <div class="nav-item" routerLink="products">Producten</div>
     </div>
     <div class="col-md-2 text-center nav-wrapper">
-      <div *ngIf="!isAdmin()" class="nav-item" routerLink="cart">Shopping cart
-        <div [hidden]="!shoppingcartService.hasItems()" class="cart-items">{{ shoppingcartService.itemCount() }}</div>
+      <div class="nav-item" routerLink="cart">Shopping cart
+        <div class="cart-items">{{ shoppingcartService.itemCount() }}</div>
       </div>
-      <div *ngIf="isAdmin()" class="nav-item" >Admin page</div>
     </div>
     <div class="col-md-2 text-center nav-wrapper">
       <div *ngIf="!accountService.isLoggedIn()" class="nav-item" routerLink="login">Login/registreer</div>
