@@ -28,4 +28,17 @@ nav {
   font-size: 0.8em;
   color: black;
   font-weight: bold;
+  display: inline;
+}
+
+.welcomeMessage {
+  font-size: 1.3em;
+  display: inline;
+  float: left;
+  margin-top: 3px;
+  padding: 5px;
+}
+
+.nav-wrapper {
+  height: 42px;
 }

@@ -37,7 +37,6 @@ export class AccountService {
   }
 
   public setLoggedIn(account: Account) {
-    console.log(account);
     this.localStorageService.setItem("JWT", account.jwt);
     this.JWT = account.jwt;
     this.account = account;
@@ -78,5 +77,11 @@ export class AccountService {
     this.api.get<Account>('/account/validateJWT/' + jwt).subscribe(account => {
       this.setLoggedIn(account);
     });
+  }
+
+  logout() {
+    this.localStorageService.removeItem("JWT")
+    this.JWT = null;
+    this.account = null;
   }
 }

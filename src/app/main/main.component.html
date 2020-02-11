@@ -1,5 +1,6 @@
-<app-navigation (pageChanged)="curLocation = $event"></app-navigation>
-<app-home *ngIf="navigator('home')"></app-home>
-<app-products *ngIf="navigator('products')"></app-products>
-<app-shopping-cart *ngIf="navigator('shopping-cart')"></app-shopping-cart>
-<app-login *ngIf="navigator('login')"></app-login>
+<app-navigation></app-navigation>
+<!--<app-home *ngIf="navigator('home')"></app-home>-->
+<!--<app-products *ngIf="navigator('products')"></app-products>-->
+<!--<app-shopping-cart *ngIf="navigator('shopping-cart')"></app-shopping-cart>-->
+<!--<app-login *ngIf="navigator('login')"></app-login>-->
+<router-outlet></router-outlet>

@@ -10,6 +10,7 @@ import {ShoppingcartService} from "../app/shared/shopping-cart.service";
 })
 export class ProductsComponent implements OnInit {
 
+  loading: boolean = true;
   products: Array<Product>;
 
   constructor(private productService: ProductService,
@@ -18,6 +19,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.productService.getAll().subscribe(response => {
       this.products = response;
+      this.loading = false;
     });
   }
 

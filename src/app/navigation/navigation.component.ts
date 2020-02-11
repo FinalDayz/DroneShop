@@ -2,6 +2,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ShoppingcartService} from "../app/shared/shopping-cart.service";
 import {AccountService} from "../shared/account.service";
 import {Role} from "../modals/Role";
+import {Router, RouterModule, Routes} from '@angular/router';
+import {LocalStorageService} from "../app/shared/local-storage.service";
+import {FeedbackMessageService} from "../feedback-message.service";
 
 @Component({
   selector: 'app-navigation',
@@ -9,15 +12,10 @@ import {Role} from "../modals/Role";
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  public page: string = 'login';
-  @Output() pageChanged = new EventEmitter();
 
-  constructor(public shoppingcartService: ShoppingcartService, public accountService: AccountService) { }
-
-  clickNavigation(page: string) {
-    this.page = page;
-    this.pageChanged.emit(page);
-  }
+  constructor(private feedbackService: FeedbackMessageService,
+    public shoppingcartService: ShoppingcartService, public accountService: AccountService,
+              private router: Router) { }
 
   public isAdmin(): boolean {
     return this.accountService.hasRole(Role.ADMIN);
@@ -26,4 +24,9 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+    this.feedbackService.showInfoMessage("Succesvol uitgelogd");
+    this.accountService.logout();
+    this.router.navigate(["/home"]);
+  }
 }

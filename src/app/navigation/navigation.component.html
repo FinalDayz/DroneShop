@@ -1,21 +1,24 @@
 <nav class="container">
+
   <div class="row">
     <div class="col-md-2 text-center">
+      <div *ngIf="accountService.isLoggedIn()" class="text-info welcomeMessage">Welkom Stefan@gmail.com</div>
     </div>
-    <div class="col-md-2 text-center">
-      <div class="nav-item" (click)="clickNavigation('home')">Home</div>
+    <div class="col-md-2 text-center nav-wrapper">
+      <div class="nav-item" routerLink="home">Home</div>
     </div>
-    <div class="col-md-2 text-center">
-      <div class="nav-item" (click)="clickNavigation('products')">Products</div>
+    <div class="col-md-2 text-center nav-wrapper">
+      <div class="nav-item" routerLink="products">Producten</div>
     </div>
-    <div class="col-md-2 text-center">
-      <div *ngIf="!isAdmin()" class="nav-item" (click)="clickNavigation('shopping-cart')">Shopping cart
+    <div class="col-md-2 text-center nav-wrapper">
+      <div *ngIf="!isAdmin()" class="nav-item" routerLink="cart">Shopping cart
         <div [hidden]="!shoppingcartService.hasItems()" class="cart-items">{{ shoppingcartService.itemCount() }}</div>
       </div>
-      <div *ngIf="isAdmin()" class="nav-item" (click)="clickNavigation('shopping-cart')">Admin page</div>
+      <div *ngIf="isAdmin()" class="nav-item" >Admin page</div>
     </div>
-    <div class="col-md-2 text-center">
-      <div class="nav-item" (click)="clickNavigation('login')">Login/register</div>
+    <div class="col-md-2 text-center nav-wrapper">
+      <div *ngIf="!accountService.isLoggedIn()" class="nav-item" routerLink="login">Login/registreer</div>
+      <div *ngIf="accountService.isLoggedIn()" class="nav-item" (click)="logout()">Log uit</div>
     </div>
     <div class="col-md-2 text-center">
     </div>
