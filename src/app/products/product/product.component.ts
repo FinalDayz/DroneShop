@@ -1,10 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Host, Input, OnInit} from '@angular/core';
 import {Product} from "./Product";
 import {ShoppingcartService} from "../../app/shared/shopping-cart.service";
 import {Role} from "../../modals/Role";
 import {AccountService} from "../../shared/account.service";
 import {EditProductComponent} from "../edit-product/edit-product.component";
 import {MatDialog} from "@angular/material/dialog";
+import {ProductsComponent} from "../products.component";
 
 @Component({
   selector: 'app-product',
@@ -15,9 +16,14 @@ export class ProductComponent implements OnInit {
 
   @Input() product: Product;
   addGray: boolean;
+  parent: ProductsComponent;
+
   constructor(private shoppingcartService: ShoppingcartService,
               private accountService: AccountService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              @Host() parent: ProductsComponent) {
+    this.parent = parent;
+  }
 
   ngOnInit() {
   }
@@ -31,12 +37,15 @@ export class ProductComponent implements OnInit {
   }
 
   clickEdit() {
-    console.log(this.product);
     let dialogRef = this.dialog.open(EditProductComponent, {
       height: '800px',
       width: '1000px',
       data: this.product,
     });
+    dialogRef.beforeClosed().subscribe(close => {
+      console.log("RELOADDD");
+      this.parent.loadProducts();
+    })
   }
 
   public isAdmin(): boolean {

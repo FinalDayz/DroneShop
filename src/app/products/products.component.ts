@@ -17,10 +17,14 @@ export class ProductsComponent implements OnInit {
               private shoppingcartService: ShoppingcartService) { }
 
   ngOnInit() {
+    this.loadProducts();
+  }
+
+  loadProducts() {
+    this.loading = true;
     this.productService.getAll().subscribe(response => {
       this.products = response;
       this.loading = false;
     });
   }
-
 }

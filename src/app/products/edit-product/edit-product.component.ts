@@ -2,6 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Product} from "../product/Product";
 import {FormControl, FormGroup} from "@angular/forms";
+import {ProductService} from "../../shared/product.service";
+import {FeedbackMessageService} from "../../feedback-message.service";
 
 @Component({
   selector: 'app-edit-product',
@@ -15,21 +17,35 @@ export class EditProductComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<EditProductComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Product) {
+    @Inject(MAT_DIALOG_DATA) public data: Product,
+    private productService: ProductService,
+    private feedbackService: FeedbackMessageService) {
     this.product = data;
-    console.log(this.product);
   }
 
   ngOnInit() {
     this.productForm = new FormGroup({
-      productImagePath: new FormControl(),
-      productName: new FormControl(),
-      productDesc: new FormControl(),
-      productPrice: new FormControl()
+      productId: new FormControl(this.product.productId),
+      productImagePath: new FormControl(this.product.productImagePath),
+      productName: new FormControl(this.product.productName),
+      productDesc: new FormControl(this.product.productDesc),
+      productPrice: new FormControl(this.product.productPrice)
     });
   }
 
-  submitChanges() {
-    console.log(this.productForm.value);
+  save() {
+    this.product = this.productForm.value;
+    console.log(this.product);
+    this.productService.updateProduct(this.product).subscribe(response => {
+      this.feedbackService.showInfoMessage("Successvol bewerkingen opgeslagen");
+
+      setTimeout(res => {
+        this.close();
+      }, 750);
+    });
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 }

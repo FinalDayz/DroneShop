@@ -18,4 +18,8 @@ export class ProductService {
   private buildURL(url) {
     return this.reourcePath + "/" + url;
   }
+
+  updateProduct(product: Product) {
+    return this.api.post(this.buildURL("edit"), product);
+  }
 }
