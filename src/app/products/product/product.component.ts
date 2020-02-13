@@ -54,8 +54,8 @@ export class ProductComponent implements OnInit {
 
   openProduct() {
     this.dialog.open(ViewProductComponent, {
-      height: '800px',
-      width: '1000px',
+      height: '600px',
+      width: '1200px',
       data: this.product,
     });
   }

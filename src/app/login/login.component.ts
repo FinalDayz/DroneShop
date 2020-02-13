@@ -13,7 +13,7 @@ import {FeedbackService} from "../feedback.service";
 })
 export class LoginComponent implements OnInit {
 
-  private loginForm: FormGroup;
+  loginForm: FormGroup;
 
   constructor(private loginService: LoginService, private accountService: AccountService,
               private router: Router, private feedbackService: FeedbackService,) { }

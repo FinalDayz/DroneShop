@@ -6,7 +6,7 @@
     <div class="product-item" *ngFor="let product of products">
       <app-shopping-product [products]="products" [product]="product" [ammount]="productAmmounts[product.productId]"></app-shopping-product>
     </div>
-    <div class="total-cost">Totaal af te rekenen: €{{ totalPrice }}</div>
+    <div class="total-cost">Totaal af te rekenen: €{{ getTotalPrice() }}</div>
     <br>
     <button *ngIf="accountService.isLoggedIn()" class="btn-primary order" (click)="order()">Bestel producten</button>
     <div class="text-danger login" *ngIf="!accountService.isLoggedIn()">Log in om af te rekenen</div>

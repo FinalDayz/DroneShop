@@ -12,7 +12,7 @@ import {FeedbackService} from "../../feedback.service";
 })
 export class EditProductComponent implements OnInit {
 
-  private productForm: FormGroup;
+  productForm: FormGroup;
   product: Product;
   isEditing = true;
 

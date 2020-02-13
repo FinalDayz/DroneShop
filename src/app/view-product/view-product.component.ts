@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {Product} from "../products/product/Product";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {ShoppingcartService} from "../app/shared/shopping-cart.service";
 
 @Component({
   selector: 'app-view-product',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProductComponent implements OnInit {
 
-  constructor() { }
+  product: Product;
+
+  constructor(
+    public dialogRef: MatDialogRef<ViewProductComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Product,
+    private shoppingcartService: ShoppingcartService
+  ) {
+    this.product = data;
+  }
 
   ngOnInit() {
   }
 
+  addProduct() {
+    this.shoppingcartService.addItem(this.product);
+  }
 }

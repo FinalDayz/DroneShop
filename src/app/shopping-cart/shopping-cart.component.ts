@@ -16,10 +16,9 @@ export class ShoppingcartComponent implements OnInit {
 
   // products: Array<{number: {product: Product, amount: Number}}>;
   products: Array<Product> = [];
-  totalPrice: number = 0;
 
-  constructor(private shoppingcartService: ShoppingcartService,
-              private accountService: AccountService,
+  constructor(public shoppingcartService: ShoppingcartService,
+              public accountService: AccountService,
               private orderService: OrderService,
               private feedbackService: FeedbackService) { }
 
@@ -28,17 +27,23 @@ export class ShoppingcartComponent implements OnInit {
     this.products = this.shoppingcartService.getItems();
     let newProducts = [];
     for(let product of this.products) {
-      this.totalPrice += product.productPrice as number;
       if(this.productAmmounts[product.productId] == undefined) {
         this.productAmmounts[product.productId] = 1;
         newProducts.push(product);
       } else {
-        // delete this.products[this.products.indexOf(product)];
-
         this.productAmmounts[product.productId]++;
       }
     }
     this.products = newProducts;
+  }
+
+  getTotalPrice() {
+    var totalPrice = 0;
+    for(let product of this.shoppingcartService.getItems()) {
+      totalPrice += product.productPrice as number;
+    }
+
+    return totalPrice;
   }
 
   isInArray() {

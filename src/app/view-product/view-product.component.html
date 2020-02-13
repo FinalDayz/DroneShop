@@ -1,1 +1,12 @@
-<p>view-product works!</p>
+<div class="view-product">
+  <h2 class="product-name">{{ product.productName }}</h2>
+  <div class="image-wrapper">
+    <img src="{{ product.productImagePath }}" alt="product image">
+  </div>
+  <p class="product-description">{{ product.productDesc }}</p>
+  <hr>
+  <div class="footer">
+    <p class="product-price">€{{ product.productPrice }}</p>
+    <button class="btn-primary" (click)="addProduct()">Voeg toe aan winkelwagen</button>
+  </div>
+</div>

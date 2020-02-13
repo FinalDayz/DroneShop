@@ -9,7 +9,7 @@ export class ApiService {
   endpoint: string;
 
   constructor(private httpClient: HttpClient) {
-    this.endpoint = "http://localhost:8080";
+    this.endpoint = "http://localhost:1212";
   }
 
   createQueryString(queryParameters: object) {
