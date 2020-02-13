@@ -31,3 +31,14 @@
   border-top: 1px solid black;
 }
 
+.total-cost {
+  font-size: 2em;
+}
+
+.login {
+  font-size: 1.3em;
+}
+
+.order {
+  font-size: 1.4em;
+}

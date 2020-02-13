@@ -14,7 +14,7 @@ export class LoginService {
     return this.api.post(this.buildURL("validate"), account);
   }
 
-  register(account: Account) {
+  register(account: any) {
     return this.api.post(this.buildURL("createAccount"), account)
   }
 

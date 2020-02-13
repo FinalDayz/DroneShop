@@ -2,7 +2,7 @@
 <div class="container">
 
   <div class="entry">
-    <form class="login" [formGroup]="loginForm" (ngSubmit)="submit()">
+    <form class="login" [formGroup]="registerForm" (ngSubmit)="submit()">
       <div class="input">
         <label>E-mail</label>
         <input required placeholder="E-mail" class="input-lg" formControlName="accountEmail">
@@ -11,9 +11,13 @@
         <label>Password</label>
         <input required placeholder="Password" type="password" class="input-lg" formControlName="accountPassword">
       </div>
-      <div class="input" id="loginInp">
-        <a class="registerButton" routerLink="/register">Register</a>
-        <button type="submit" class="loginButton" [disabled]="!loginForm.valid">Login</button>
+      <div class="input">
+        <label>Herhaal</label>
+        <input required placeholder="Password" type="password" class="input-lg" formControlName="repeatPassword">
+      </div>
+      <div class="input" id="registerInp">
+        <a class="loginButton" routerLink="/login">Login</a>
+        <button type="submit" class="registerButton" [disabled]="!registerForm.valid">Register</button>
       </div>
     </form>
   </div>

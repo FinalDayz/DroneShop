@@ -22,4 +22,12 @@ export class ProductService {
   updateProduct(product: Product) {
     return this.api.post(this.buildURL("edit"), product);
   }
+
+  deleteProduct(productId: Number) {
+    return this.api.delete(this.buildURL("delete/" + productId));
+  }
+
+  createProduct(product: Product) {
+    return this.api.put(this.buildURL("create"), product);
+  }
 }

@@ -5,7 +5,7 @@ import {MatSnackBarHorizontalPosition} from "@angular/material/snack-bar/typings
 @Injectable({
   providedIn: 'root'
 })
-export class FeedbackMessageService {
+export class FeedbackService {
 
 
   constructor(private snackBar: MatSnackBar) { }

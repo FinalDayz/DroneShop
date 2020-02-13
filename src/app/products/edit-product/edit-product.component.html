@@ -12,19 +12,20 @@
         <input required placeholder="Naam" class="input-lg input" formControlName="productName">
       </label>
       <label>
+        <span class="text-left">Prijs</span>
+        <input required placeholder="€100" class="input-lg input price" formControlName="productPrice">
+      </label>
+      <label>
         <span class="text-left">Beschrijving</span>
         <textarea required placeholder="Beschrijving" class="input-lg description"
                   formControlName="productDesc"></textarea>
       </label>
-      <label>
-        <span class="text-left">Prijs</span>
-        <input required placeholder="€100" class="input-lg input price" formControlName="productPrice">
-      </label>
       <br>
     </form>
   </div>
-  <div class="footer">
-    <button class="btn-success confirm" (click)="save()">Opslaan</button>
-    <button class="btn-danger cancel" (click)="close()">Anuleer</button>
-  </div>
+</div>
+<div class="footer">
+  <button class="btn-primary" (click)="save()">Opslaan</button>
+  <button class="btn-warning" (click)="close()">Anuleer</button>
+  <button *ngIf="isEditing" class="btn-danger delete" (click)="delete()">Verwijder</button>
 </div>

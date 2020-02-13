@@ -4,7 +4,7 @@ import {AccountService} from "../shared/account.service";
 import {Role} from "../modals/Role";
 import {Router, RouterModule, Routes} from '@angular/router';
 import {LocalStorageService} from "../app/shared/local-storage.service";
-import {FeedbackMessageService} from "../feedback-message.service";
+import {FeedbackService} from "../feedback.service";
 
 @Component({
   selector: 'app-navigation',
@@ -13,7 +13,7 @@ import {FeedbackMessageService} from "../feedback-message.service";
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private feedbackService: FeedbackMessageService,
+  constructor(private feedbackService: FeedbackService,
     public shoppingcartService: ShoppingcartService, public accountService: AccountService,
               private router: Router) { }
 

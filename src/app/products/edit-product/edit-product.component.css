@@ -1,14 +1,9 @@
-.product-details {
-  /*height: 100%;*/
-}
-
 .footer {
   border-top: 1px solid lightgrey;
-  position: absolute;
   bottom: 10px;
   width: 100%;
-  padding: 15px;
   background-color: white;
+  padding: 15px 15px 0;
 }
 
 .footer button {
@@ -18,9 +13,13 @@
   height: 40px;
 }
 
+.delete {
+  float: right;
+}
+
 .productImage {
   width: 400px;
-  padding-right: 100px;
+  padding-right: 5%;
   float: right;
 }
 
@@ -47,6 +46,5 @@ label span {
 }
 
 .edit-product {
-  position: relative;
-  height: 752px;
+  height: 690px;
 }

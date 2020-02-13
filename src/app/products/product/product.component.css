@@ -62,3 +62,7 @@
   float: right;
   font-size: 1.3em;
 }
+
+.clickable {
+  cursor: pointer;
+}

@@ -6,6 +6,7 @@ import {AccountService} from "../../shared/account.service";
 import {EditProductComponent} from "../edit-product/edit-product.component";
 import {MatDialog} from "@angular/material/dialog";
 import {ProductsComponent} from "../products.component";
+import {ViewProductComponent} from "../../view-product/view-product.component";
 
 @Component({
   selector: 'app-product',
@@ -43,12 +44,19 @@ export class ProductComponent implements OnInit {
       data: this.product,
     });
     dialogRef.beforeClosed().subscribe(close => {
-      console.log("RELOADDD");
       this.parent.loadProducts();
-    })
+    });
   }
 
   public isAdmin(): boolean {
-    return this.accountService.hasRole(Role.ADMIN);
+    return this.accountService.isAdmin();
+  }
+
+  openProduct() {
+    this.dialog.open(ViewProductComponent, {
+      height: '800px',
+      width: '1000px',
+      data: this.product,
+    });
   }
 }

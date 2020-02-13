@@ -80,8 +80,16 @@ export class AccountService {
   }
 
   logout() {
-    this.localStorageService.removeItem("JWT")
+    this.localStorageService.removeItem("JWT");
     this.JWT = null;
     this.account = null;
+  }
+
+  getAccountId() {
+    return this.account.accountId;
+  }
+
+  isAdmin() {
+    return this.hasRole(Role.ADMIN);
   }
 }

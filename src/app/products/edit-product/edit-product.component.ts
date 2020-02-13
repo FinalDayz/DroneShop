@@ -3,7 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Product} from "../product/Product";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ProductService} from "../../shared/product.service";
-import {FeedbackMessageService} from "../../feedback-message.service";
+import {FeedbackService} from "../../feedback.service";
 
 @Component({
   selector: 'app-edit-product',
@@ -14,13 +14,19 @@ export class EditProductComponent implements OnInit {
 
   private productForm: FormGroup;
   product: Product;
+  isEditing = true;
 
   constructor(
     public dialogRef: MatDialogRef<EditProductComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product,
     private productService: ProductService,
-    private feedbackService: FeedbackMessageService) {
-    this.product = data;
+    private feedbackService: FeedbackService) {
+    if(this.data === null || this.data === undefined) {
+      this.isEditing = false;
+      this.product = new Product();
+    } else {
+      this.product = data;
+    }
   }
 
   ngOnInit() {
@@ -35,17 +41,37 @@ export class EditProductComponent implements OnInit {
 
   save() {
     this.product = this.productForm.value;
-    console.log(this.product);
-    this.productService.updateProduct(this.product).subscribe(response => {
-      this.feedbackService.showInfoMessage("Successvol bewerkingen opgeslagen");
+    if(this.isEditing)
+      this.saveEdits();
+    else
+      this.saveNew();
+  }
 
-      setTimeout(res => {
-        this.close();
-      }, 750);
+  private saveEdits() {
+    this.productService.updateProduct(this.product).subscribe(response => {
+      this.closeWithMessage("Succesvol bewerkingen opgeslagen");
+    });
+  }
+
+  private saveNew() {
+    this.productService.createProduct(this.product).subscribe(response => {
+      this.closeWithMessage("Product succesvol aangemaakt");
     });
   }
 
   close() {
     this.dialogRef.close();
+  }
+
+  delete() {
+    this.productService.deleteProduct(this.product.productId).subscribe(response => {
+      this.closeWithMessage("Product verwijderd");
+    });
+  }
+  private closeWithMessage(message: string) {
+    this.feedbackService.showInfoMessage(message);
+    setTimeout(res => {
+      this.close();
+    }, 750);
   }
 }

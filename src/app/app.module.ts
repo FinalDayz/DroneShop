@@ -23,6 +23,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { RegisterComponent } from './register/register.component';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 export function init_app(accountService: AccountService) {
   return () => accountService.init();
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
   {path: 'products', component: ProductsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'cart', component: ShoppingcartComponent},
+  {path: 'register', component: RegisterComponent},
   {
     path: '',
     redirectTo: '/home',
@@ -56,6 +59,8 @@ const appRoutes: Routes = [
     MainComponent,
     ShoppingProductComponent,
     EditProductComponent,
+    RegisterComponent,
+    ViewProductComponent,
   ],
   imports: [
     MatSnackBarModule,
@@ -79,6 +84,7 @@ const appRoutes: Routes = [
     {provide: APP_INITIALIZER, useFactory: init_app, deps: [AccountService], multi: true},
   ],
   entryComponents: [
+    ViewProductComponent,
     EditProductComponent
   ],
   bootstrap: [AppComponent]

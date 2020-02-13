@@ -1,6 +1,7 @@
 <div class="background"></div>
 <div class="products">
   <h2 class="title">Discover our drones!</h2>
+  <button *ngIf="isAdmin()" (click)="addProductDialog()" class="btn-primary add-product">Voeg product toe</button>
   <hr class="break">
   <div class="product-item" *ngFor="let product of products">
     <app-product [product]="product"></app-product>

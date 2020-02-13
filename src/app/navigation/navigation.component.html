@@ -2,7 +2,8 @@
 
   <div class="row">
     <div class="col-md-2 text-center">
-      <div *ngIf="accountService.isLoggedIn()" class="text-info welcomeMessage">Welkom Stefan@gmail.com</div>
+      <div *ngIf="accountService.isLoggedIn() && !accountService.isAdmin()" class="text-info welcomeMessage">Welkom Stefan@gmail.com</div>
+      <div *ngIf="accountService.isLoggedIn() && accountService.isAdmin()" class="text-primary welcomeMessage">Ingelogd als admin</div>
     </div>
     <div class="col-md-2 text-center nav-wrapper">
       <div class="nav-item" routerLink="home">Home</div>

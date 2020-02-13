@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {LocalStorageService} from "./local-storage.service";
 import {Product} from "../../products/product/Product";
-import {FeedbackMessageService} from "../../feedback-message.service";
+import {FeedbackService} from "../../feedback.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ShoppingcartService {
   private products: Array<Product> = [];
 
   constructor(private localStorageService: LocalStorageService,
-              private feedbackService: FeedbackMessageService) {
+              private feedbackService: FeedbackService) {
     if (this.localStorageService.hasItem("products")) {
     } else {
       this.localStorageService.setItem("products", []);
@@ -51,5 +51,10 @@ export class ShoppingcartService {
     }
 
     this.localStorageService.setItem("products", this.products);
+  }
+
+  clearAll() {
+    this.localStorageService.removeItem("products");
+    this.products = [];
   }
 }

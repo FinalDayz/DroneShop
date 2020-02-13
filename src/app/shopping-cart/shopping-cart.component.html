@@ -7,6 +7,9 @@
       <app-shopping-product [products]="products" [product]="product" [ammount]="productAmmounts[product.productId]"></app-shopping-product>
     </div>
     <div class="total-cost">Totaal af te rekenen: €{{ totalPrice }}</div>
+    <br>
+    <button *ngIf="accountService.isLoggedIn()" class="btn-primary order" (click)="order()">Bestel producten</button>
+    <div class="text-danger login" *ngIf="!accountService.isLoggedIn()">Log in om af te rekenen</div>
   </div>
   <div class="empty products" *ngIf="products.length < 1">
     <h2 class="title">Uw winkelwagen is leeg!</h2>

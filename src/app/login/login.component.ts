@@ -4,7 +4,7 @@ import {LoginService} from "../shared/login.service";
 import {AccountService} from "../shared/account.service";
 import {Account} from "../modals/Account";
 import {Router} from "@angular/router";
-import {FeedbackMessageService} from "../feedback-message.service";
+import {FeedbackService} from "../feedback.service";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   private loginForm: FormGroup;
 
   constructor(private loginService: LoginService, private accountService: AccountService,
-              private router: Router, private feedbackService: FeedbackMessageService) { }
+              private router: Router, private feedbackService: FeedbackService,) { }
 
   submit() {
     this.loginService.validLogin(this.loginForm.value).subscribe((result: Account) => {

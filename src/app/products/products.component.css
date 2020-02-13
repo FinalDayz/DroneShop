@@ -1,9 +1,5 @@
-.products {
-  width: 1200px;
-  margin: auto;
-  background-color: white;
-  padding-right: 30px;
-  padding-left: 30px;
+.edit-product {
+  overflow-y: scroll;
 }
 
 .background {
@@ -19,6 +15,14 @@
   background-size: cover;
 }
 
+.products {
+  width: 1200px;
+  background-color: white;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin: 20px auto auto;
+}
+
 .product-item {
   height: 200px;
   margin-bottom: 100px;
@@ -28,8 +32,15 @@
 .title {
   margin-top: 0;
   padding-top: 50px;
+  display: inline;
 }
 
 .break {
   border-top: 1px solid black;
+}
+
+.add-product {
+  margin-right: 90px;
+  float: right;
+  font-size: 1.4em;
 }
